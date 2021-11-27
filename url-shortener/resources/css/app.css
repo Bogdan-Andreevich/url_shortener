@@ -1,3 +1,25 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+#loginbox {
+    border: 1px solid black;
+    width: 300px;
+}
+
+#loginbox label {
+    float: left;
+    width: 80px;
+}
+#loginbox span {
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 0;
+}
+#loginbox span input {
+    width: 100%;
+}
+
+#loginbox div input {
+    width: 70%;
+  }

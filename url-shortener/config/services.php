@@ -33,7 +33,7 @@ return [
     'github' => [
         'client_id' => 'fc7a87ff6a82740e833f',
         'client_secret' => '571283f1572eb2df2b28b53669ea26005b56fd79',
-        'redirect' => 'http://localhost/dashboard',
+        'redirect' => 'http://localhost/auth/github/callback',
     ],
 
 ];
