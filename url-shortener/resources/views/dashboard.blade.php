@@ -29,6 +29,7 @@
                             <div class="form-group">
                                 <span>
                                     <input type="text" name="url" size="133" class="form-control customFormInput" id="short-url" placeholder="Enter your url">
+                                    <input type="text" name="nameForShortUrl" size="133" class="form-control customFormInput" id="short-url" placeholder="Enter your name for url">
                                 </span>
                             </div>
                             <button type="submit" class="btn" style="background: #313131; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">Get Short-Url</button>

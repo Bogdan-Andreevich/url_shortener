@@ -12,6 +12,7 @@ class ShortUrl extends Model
     protected $fillable = [
         'url',
         'key',
+        'nameForShortUrl',
 
     ];
 }

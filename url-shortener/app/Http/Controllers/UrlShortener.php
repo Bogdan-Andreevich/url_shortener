@@ -16,27 +16,48 @@ class UrlShortener extends Controller
     public function getUrl(CreateShortUrlRequest $request)
     {
         $url = $request->get('url');
-        $key =  uniqid();
+        $uniqueName = $request->get('nameForShortUrl');
 
-        $shortUrl = ShortUrl::create([
-            'url' => $url,
-            'key' => $key,
-        ]);
+        if(!$uniqueName){
 
-        if($shortUrl){
-            return back()->with('success', route('ShortUrl', ['key' => $key]));
-        }else{
-            return back()->with('errors', 'Не удалось получить сылку');
+            $key =  uniqid();
+
+            $shortUrl = ShortUrl::create([
+                'url' => $url,
+                'key' => $key,
+            ]);
+
+            if($shortUrl){
+                return back()->with('success', route('ShortUrl', ['key' => $key]));
+            }else{
+                return back()->with('errors', 'Не удалось получить сылку');
+            }
         }
+
+        if($uniqueName){
+
+            $shortUrl = ShortUrl::create([
+                'url' => $url,
+                'key' => $uniqueName,
+                'nameForShortUrl' => $uniqueName,
+            ]);
+            if($shortUrl){
+                $key = $uniqueName;
+                return back()->with('success', route('ShortUrl', ['key' => $key]));
+            }else{
+                return back()->with('errors', 'Не удалось получить сылку');
+            }
+        }
+
+
 
     }
 
-    public function getShortUrl(string $key)
+    public function getShortUrl($key)
     {
         $shortUrl = ShortUrl::where(['key' => $key])->firstOrFail();
         if($shortUrl){
             return redirect($shortUrl->url);
         }
     }
-
 }
