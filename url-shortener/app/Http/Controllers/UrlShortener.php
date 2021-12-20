@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Psy\Util\Str;
 use App\Models\ShortUrl;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Route;
 
 
@@ -35,6 +36,8 @@ class UrlShortener extends Controller
         }
 
         if($uniqueName){
+
+            $shortUrl = ShortUrl::where('key', $uniqueName)->delete();
 
             $shortUrl = ShortUrl::create([
                 'url' => $url,
