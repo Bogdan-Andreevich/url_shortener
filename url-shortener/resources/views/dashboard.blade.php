@@ -17,11 +17,11 @@
 
     <div id="myModalMessage" class="modal modal-message">
         <div class="modal-content">
-            <span class="close_message">×</span>
+            <span class="close_message">X</span>
 
             <p>
                 <strong>
-                    The new url: <a href="{{session()->get('success')}}">{{session()->get('success')}}</a>
+                    The new url: <a href="{{session()->get('success')}}" target='_blank'>{{session()->get('success')}}</a>
                 </strong>
             </p>
 
@@ -107,7 +107,7 @@
 
             <div id="myModal" class="modal">
                 <div class="modal-content">
-                    <span class="close">×</span>
+                    <span class="close" style="cursor: pointer;">X</span>
 
                     <form class="customForm" method="POST" action="{{route('CreateShortUrl')}}">
                         @csrf
@@ -116,7 +116,7 @@
                                       <span class="input_group">
                                           <label>
                                             <h2>Enter your url:</h2>
-                                            <input type="text" pattern='(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})' name="url" required class="form-control customFormInput primaryInput" id="short-url" placeholder="Enter your url">
+                                            <input type="text" pattern='(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})' name="url" maxLength='255' required class="form-control customFormInput primaryInput" id="short-url" placeholder="Enter your url">
                                           </label>
 
                                           <label>
