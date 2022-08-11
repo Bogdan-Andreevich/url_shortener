@@ -35,5 +35,11 @@ return [
         'client_secret' => '571283f1572eb2df2b28b53669ea26005b56fd79',
         'redirect' => 'http://localhost/auth/github/callback',
     ],
+    'google' => [
+        'client_id' => '815525493665-5pvbk6fm95ks2tc8pvebbsvcumd8vqq8.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://localhost/auth/google/callback',
+
+    ],
 
 ];
